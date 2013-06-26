@@ -413,7 +413,7 @@ public class SignalStrength implements Parcelable {
     }
 
     /** @hide */
-    public int getLteSignalStrenght() {
+    public int getLteSignalStrength() {
         return mLteSignalStrength;
     }
 
