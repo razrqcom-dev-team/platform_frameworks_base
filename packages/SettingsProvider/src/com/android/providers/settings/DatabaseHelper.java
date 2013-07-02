@@ -2225,10 +2225,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             // Set default cdma call auto retry
             loadSetting(stmt, Settings.Global.CALL_AUTO_RETRY, 0);
 
-            // Set the preferred network mode from build.prop
+            // Set the preferred network mode to target desired value or Default
+            // value defined in RILConstants
             int type;
             type = SystemProperties.getInt("ro.telephony.default_network",
-                    RILConstants.PREFERRED_NETWORK_MODE);
+                        RILConstants.PREFERRED_NETWORK_MODE);
             loadSetting(stmt, Settings.Global.PREFERRED_NETWORK_MODE, type);
 
             // --- New global settings start here
